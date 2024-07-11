@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  azure-function-cron:
+    image: cronworkflow.azurecr.io/function:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8501:80"
+    stdin_open: true
+    tty: true
